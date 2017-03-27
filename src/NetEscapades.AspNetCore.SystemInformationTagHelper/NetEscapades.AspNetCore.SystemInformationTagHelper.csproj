@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard1.6;net451</TargetFrameworks>
+    <RootNamespace>NetEscapades.AspNetCore.TagHelpers</RootNamespace>
+    <Authors>Andrew Lock</Authors>
+    <Company />
+    <Description>Package Description</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Runtime" Version="1.1.1" />
+  </ItemGroup>
+
+</Project>
