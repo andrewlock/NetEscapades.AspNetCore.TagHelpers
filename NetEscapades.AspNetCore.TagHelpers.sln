@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetEscapades.AspNetCore.Tag
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetEscapades.AspNetCore.PartialTagHelper", "src\NetEscapades.AspNetCore.PartialTagHelper\NetEscapades.AspNetCore.PartialTagHelper.csproj", "{C57A647A-250B-4CBB-90B3-83B7CFFD91F2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetEscapades.AspNetCore.IfTagHelper", "src\NetEscapades.AspNetCore.IfTagHelper\NetEscapades.AspNetCore.IfTagHelper.csproj", "{21B96EB9-A35F-4648-8F38-5244E419300B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{C57A647A-250B-4CBB-90B3-83B7CFFD91F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C57A647A-250B-4CBB-90B3-83B7CFFD91F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C57A647A-250B-4CBB-90B3-83B7CFFD91F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21B96EB9-A35F-4648-8F38-5244E419300B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21B96EB9-A35F-4648-8F38-5244E419300B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21B96EB9-A35F-4648-8F38-5244E419300B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21B96EB9-A35F-4648-8F38-5244E419300B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,5 +52,6 @@ Global
 		{5E0B44D8-83FD-4DAE-90A0-C47E31916353} = {57CF9B30-80F7-4710-B357-529B98396C5D}
 		{B84310B2-2DC3-4D90-9C52-A23D5BCD95E7} = {189BB71C-7343-43B8-8A3D-9F2E689DB9DA}
 		{C57A647A-250B-4CBB-90B3-83B7CFFD91F2} = {189BB71C-7343-43B8-8A3D-9F2E689DB9DA}
+		{21B96EB9-A35F-4648-8F38-5244E419300B} = {189BB71C-7343-43B8-8A3D-9F2E689DB9DA}
 	EndGlobalSection
 EndGlobal

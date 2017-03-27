@@ -33,21 +33,12 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index" asp-protocol="http">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <partial name="_Partial1" />
-            <partial name="_Partial2" render="true" />
-            <system-info class="dl-horizontal" />
-            <system-info visible="false" />
-        </footer>
     </div>
 
     <environment names="Development">

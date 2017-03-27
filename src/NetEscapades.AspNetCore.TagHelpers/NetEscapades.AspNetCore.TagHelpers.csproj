@@ -13,6 +13,7 @@
   <ItemGroup>
     <Compile Include="..\NetEscapades.AspNetCore.SystemInformationTagHelper\*.cs" />
     <Compile Include="..\NetEscapades.AspNetCore.PartialTagHelper\*.cs" />
+    <Compile Include="..\NetEscapades.AspNetCore.IfTagHelper\*.cs" />
   </ItemGroup>
   
 </Project>
