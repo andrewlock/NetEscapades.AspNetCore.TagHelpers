@@ -43,6 +43,8 @@
         @RenderBody()
         <hr />
         <footer>
+            <partial name="_Partial1" />
+            <partial name="_Partial2" render="true" />
             <system-info class="dl-horizontal" />
             <system-info visible="false" />
         </footer>
@@ -68,7 +70,6 @@
         </script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
-    @Html.Partial("_ValidationScriptsPartial")
     @RenderSection("Scripts", required: false)
 </body>
 </html>
