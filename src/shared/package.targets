@@ -1,0 +1,15 @@
+<Project>
+  <PropertyGroup Label="Package">
+    <VersionPrefix>0.1.0</VersionPrefix>
+    <Authors>Andrew Lock</Authors>
+    <Product>ASP.NET Core MVC 6 Boilerplate Framework</Product>
+    <Description>...</Description>
+    <Copyright>Copyright © Andrew Lock. All rights Reserved</Copyright>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseUrl>https://github.com/andrewlock/NetEscapades.AspNetCore.TagHelpers/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/andrewlock/NetEscapades.AspNetCore.TagHelpers</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/andrewlock/NetEscapades.AspNetCore.TagHelpers</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>ASP.NET;ASP.NET Core;MVC;Tag Helper;Tag Helpers;TagHelper;TagHelpers</PackageTags>
+  </PropertyGroup>
+</Project>

@@ -1,7 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../shared/shared.targets" />
 
   <PropertyGroup>
     <TargetFrameworks>netstandard1.6;net451</TargetFrameworks>
+    <Description>Provides a number of TagHelpers for use in ASP.NET Core apps</Description>
   </PropertyGroup>
 
   <ItemGroup>

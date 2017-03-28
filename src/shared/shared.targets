@@ -1,0 +1,9 @@
+<Project>
+  <Import Project="./package.targets" />
+  <PropertyGroup Label="Build">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <RootNamespace>NetEscapades.AspNetCore.TagHelpers</RootNamespace>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <AssemblyFileVersion>1.0.0.0</AssemblyFileVersion>
+  </PropertyGroup>
+</Project>

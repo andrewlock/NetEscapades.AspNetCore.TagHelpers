@@ -1,11 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../shared/shared.targets" />
 
   <PropertyGroup>
     <TargetFrameworks>netstandard1.6;net451</TargetFrameworks>
-    <RootNamespace>NetEscapades.AspNetCore.TagHelpers</RootNamespace>
-    <Authors>Andrew Lock</Authors>
-    <Company />
-    <Description>Package Description</Description>
+    <Description>Provides a System Information Tag Helper for rendering information about your application as a TagHelper</Description>
   </PropertyGroup>
 
   <ItemGroup>
