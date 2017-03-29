@@ -20,7 +20,7 @@ var buildNumber =
  
 // Assume we're building on appveyor for publishing NuGets
 // So always add a beta prefix if not doing a tag
-var isTag = EnvironmentVariable("APPVEYOR_REPO_TAG") != null;
+var isTag = EnvironmentVariable("APPVEYOR_REPO_TAG") != null && EnvironmentVariable("APPVEYOR_REPO_TAG") == "true" ;
 var revision = isTag ? null : "beta-" +buildNumber.ToString("D4");
 // A directory path to an Artifacts directory.
 var artifactsDirectory = Directory("./artifacts");
