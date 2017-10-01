@@ -21,7 +21,6 @@ namespace NetEscapades.AspNetCore.TagHelpers
 
         /// <summary>
         /// A value indicating whether to render the content inside the element.
-        /// If <see cref="Exclude"/> is also true, the content will not be rendered.
         /// </summary>
         [HtmlAttributeName(Constants.ExcludeIfAttributeName)]
         public bool Exclude { get; set; } = false;
@@ -29,15 +28,8 @@ namespace NetEscapades.AspNetCore.TagHelpers
         /// <inheritdoc />
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
-            if (context == null)
-            {
-                throw new ArgumentNullException(nameof(context));
-            }
-
-            if (output == null)
-            {
-                throw new ArgumentNullException(nameof(output));
-            }
+            if (context == null) { throw new ArgumentNullException(nameof(context)); }
+            if (output == null) { throw new ArgumentNullException(nameof(output)); }
 
             // Always strip the outer tag name as we never want <if> to render
             output.TagName = null;

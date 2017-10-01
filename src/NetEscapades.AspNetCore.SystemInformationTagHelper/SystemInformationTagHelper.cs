@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Razor.TagHelpers;
-using Microsoft.Extensions.PlatformAbstractions;
 using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.Encodings.Web;
+using System.Reflection;
+using System.Runtime.Versioning;
 
 namespace NetEscapades.AspNetCore.TagHelpers
 {
@@ -17,10 +18,16 @@ namespace NetEscapades.AspNetCore.TagHelpers
     {
         private readonly HtmlEncoder _htmlEncoder;
         private readonly IHostingEnvironment _hostingEnvironment;
+#if NETSTANDARD2_0
+        private readonly Assembly _assembly;
+#endif
         public SystemInfoTagHelper(HtmlEncoder htmlEncoder, IHostingEnvironment hostingEnvironment)
         {
             _hostingEnvironment = hostingEnvironment;
             _htmlEncoder = htmlEncoder;
+#if NETSTANDARD2_0
+            _assembly = Assembly.GetEntryAssembly();
+#endif
         }
 
         /// <summary>
@@ -109,19 +116,33 @@ namespace NetEscapades.AspNetCore.TagHelpers
                 var version = _htmlEncoder.Encode(RuntimeInformation.OSArchitecture.ToString());
                 sb.Append($"<dt>OS Architecture</dt><dd>{version}</dd>");
             }
+
             if (IncludeApplicationName)
             {
-                var version = _htmlEncoder.Encode(PlatformServices.Default.Application.ApplicationName);
-                sb.Append($"<dt>App Name</dt><dd>{version}</dd>");
+#if NETSTANDARD2_0
+                var name = _htmlEncoder.Encode(_assembly.GetName().Name);
+#else
+                var name = _htmlEncoder.Encode(Microsoft.Extensions.PlatformAbstractions.PlatformServices.Default.Application.ApplicationName);
+#endif
+                sb.Append($"<dt>App Name</dt><dd>{name}</dd>");
             }
             if (IncludeApplicationVersion)
             {
-                var version = _htmlEncoder.Encode(PlatformServices.Default.Application.ApplicationVersion);
+#if NETSTANDARD2_0
+                var version = _htmlEncoder.Encode(_assembly.GetName().Version.ToString());
+#else
+                var version = _htmlEncoder.Encode(Microsoft.Extensions.PlatformAbstractions.PlatformServices.Default.Application.ApplicationVersion);
+#endif
+
                 sb.Append($"<dt>App Version</dt><dd>{version}</dd>");
             }
             if (IncludeApplicationRuntime)
             {
-                var version = _htmlEncoder.Encode(PlatformServices.Default.Application.RuntimeFramework.ToString());
+#if NETSTANDARD2_0
+                var version = _htmlEncoder.Encode(_assembly.GetCustomAttribute<TargetFrameworkAttribute>().FrameworkName);
+#else
+                var version = _htmlEncoder.Encode(Microsoft.Extensions.PlatformAbstractions.PlatformServices.Default.Application.RuntimeFramework.ToString());
+#endif
                 sb.Append($"<dt>Runtime Framework</dt><dd>{version}</dd>");
             }
             var unenecoded = sb.ToString();
