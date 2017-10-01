@@ -2,16 +2,22 @@
   <Import Project="../shared/shared.targets" />
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard1.6;net451</TargetFrameworks>
+    <TargetFrameworks>netstandard1.6;net451;netstandard2.0</TargetFrameworks>
     <Description>Provides a number of TagHelpers for use in ASP.NET Core apps</Description>
   </PropertyGroup>
 
-  <ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' != 'netstandard2.0'">
     <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="1.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="1.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Runtime" Version="1.1.1" />
   </ItemGroup>
 
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Runtime" Version="2.0.0" />
+  </ItemGroup>
+  
   <ItemGroup>
     <Compile Include="..\NetEscapades.AspNetCore.SystemInformationTagHelper\*.cs" />
     <Compile Include="..\NetEscapades.AspNetCore.PartialTagHelper\*.cs" />
